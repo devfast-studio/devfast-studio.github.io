@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Head from 'next/head';
 
 export default function Layout({
@@ -44,7 +45,7 @@ export default function Layout({
           </div>
         )}
       </header>
-      {/* <Navbar /> */}
+      <Navbar />
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {children}
       </main>
@@ -56,5 +57,19 @@ export default function Layout({
         </div>
       </footer>
     </div>
+  );
+}
+
+function Navbar() {
+  // responsive navbar
+  return (
+    <ul className="bg-white shadow px-4 py-3 flex space-x-4 sm:px-6 lg:px-8">
+      <li>
+        <Link href="/">Home</Link>
+      </li>
+      <li>
+        <Link href="/profile">profile</Link>
+      </li>
+    </ul>
   );
 }

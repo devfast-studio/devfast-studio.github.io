@@ -1,6 +1,15 @@
+/**
+ * Ref:
+ * 1. https://nextjs.org/docs/advanced-features/static-html-export
+ *   - Pay attention to the "Unsupported Features" section
+ */
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  assetPrefix: ".",
   reactStrictMode: true,
-}
+  output: 'export',
+  distDir: 'build',
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
