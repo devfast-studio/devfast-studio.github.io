@@ -3,20 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build && next export",
-    "start": "serve out",
+    "dev": "tinacms dev -c \"next dev\"",
+    "build": "tinacms build && next build && next export",
+    "start": "tinacms build && serve out",
     "lint": "next lint",
     "format": "prettier --loglevel warn --write \"./src/{components,pages,utils}/**/*.{ts,tsx,js,jsx}\""
   },
   "dependencies": {
+    "@tinacms/cli": "^1.5.5",
     "autoprefixer": "^10.4.14",
     "next": "^13.2.4",
     "postcss": "^8.4.21",
     "prettier": "^2.8.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tailwindcss": "^3.2.7"
+    "tailwindcss": "^3.2.7",
+    "tinacms": "^1.4.5"
   },
   "devDependencies": {
     "@types/node": "18.15.0",
