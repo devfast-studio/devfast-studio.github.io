@@ -1,49 +1,51 @@
-import { defineConfig } from "tinacms";
+import { defineConfig } from 'tinacms';
 
 // Your hosting provider likely exposes this as an environment variable
-const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
+const BRANCH = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || 'main';
+const CLIENT_ID = process.env.TINA_CLIENT_ID;
+const TOKEN = process.env.TINA_TOKEN;
 
 export default defineConfig({
-  branch,
-  clientId: null, // Get this from tina.io
-  token: null, // Get this from tina.io
+  branch: BRANCH,
+  clientId: CLIENT_ID, // Get this from tina.io
+  token: TOKEN, // Get this from tina.io
 
   build: {
-    outputFolder: "admin",
-    publicFolder: "public",
+    outputFolder: 'admin',
+    publicFolder: 'public'
   },
   media: {
     tina: {
-      mediaRoot: "",
-      publicFolder: "public",
-    },
+      mediaRoot: '',
+      publicFolder: 'public'
+    }
   },
   schema: {
     collections: [
       {
-        name: "post",
-        label: "Posts",
-        path: "content/posts",
+        name: 'post',
+        label: 'Posts',
+        path: 'content/posts',
         fields: [
           {
-            type: "string",
-            name: "title",
-            label: "Title",
+            type: 'string',
+            name: 'title',
+            label: 'Title',
             isTitle: true,
-            required: true,
+            required: true
           },
           {
-            type: "rich-text",
-            name: "body",
-            label: "Body",
-            isBody: true,
-          },
+            type: 'rich-text',
+            name: 'body',
+            label: 'Body',
+            isBody: true
+          }
         ],
         ui: {
           // This is an DEMO router. You can remove this to fit your site
-          router: ({ document }) => `/demo/blog/${document._sys.filename}`,
-        },
-      },
-    ],
-  },
+          router: ({ document }) => `/demo/blog/${document._sys.filename}`
+        }
+      }
+    ]
+  }
 });

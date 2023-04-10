@@ -35,5 +35,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
-.env
 node_modules
+.env
