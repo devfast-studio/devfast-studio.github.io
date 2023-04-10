@@ -2,8 +2,8 @@ import { defineConfig } from 'tinacms';
 
 // Your hosting provider likely exposes this as an environment variable
 const BRANCH = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || 'main';
-const CLIENT_ID = process.env.TINA_CLIENT_ID;
-const TOKEN = process.env.TINA_TOKEN;
+const CLIENT_ID = String(process.env.TINA_CLIENT_ID);
+const TOKEN = String(process.env.TINA_TOKEN);
 
 export default defineConfig({
   branch: BRANCH,
