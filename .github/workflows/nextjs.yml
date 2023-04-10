@@ -76,7 +76,7 @@ jobs:
       - name: Build TinaCMS
         env:
           TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}
-          TIN_TOKEN: ${{ secrets.TINA_TOKEN }}
+          TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
         run: yarn tinacms build
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
