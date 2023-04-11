@@ -2,6 +2,7 @@ import { useState, ReactNode } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 import Image from 'next/image';
+import Footer from 'components/footer';
 
 export default function Layout({
   children,
@@ -53,13 +54,7 @@ export default function Layout({
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {children}
       </main>
-      <footer className="bg-white shadow">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <p className="text-center text-gray-500 text-sm">
-            © 2021 Your Company Name
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
@@ -129,7 +124,9 @@ function Navbar() {
       {/* #region mobile view navbar content */}
       <div
         id="mobile-menu-content"
-        className={`sm:hidden flex flex-col px-2 pt-2 pb-3 transition duration-500 ${isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'}`}
+        className={`sm:hidden flex flex-col px-2 pt-2 pb-3 transition duration-500 ${
+          isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
+        }`}
       >
         <Link href="/">Home</Link>
         <Link href="/profile">profile</Link>
