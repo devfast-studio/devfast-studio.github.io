@@ -10,7 +10,7 @@
     "format": "prettier --loglevel warn --write \"./src/{components,pages,utils}/**/*.{ts,tsx,js,jsx}\""
   },
   "dependencies": {
-    "@radix-ui/react-popover": "1.0.5",
+    "@headlessui/react": "^1.7.13",
     "@tinacms/cli": "^1.5.5",
     "autoprefixer": "^10.4.14",
     "next": "^13.2.4",
