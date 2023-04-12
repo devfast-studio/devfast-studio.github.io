@@ -43,18 +43,7 @@ export default function Layout({
         <meta property="og:description" content={description} />
       </Head>
       <Navbar />
-      <header>
-        {title && (
-          <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-            <h1 className="text-3xl font-bold leading-tight text-gray-900">
-              {title}
-            </h1>
-          </div>
-        )}
-      </header>
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {children}
-      </main>
+      <main className="max-w-4xl">{children}</main>
       <Footer />
     </div>
   );
