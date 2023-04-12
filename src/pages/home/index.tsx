@@ -6,9 +6,11 @@ import Hero from './hero';
 function Home() {
   return (
     <Layout title="MyBrand | Example" description="Hello world description">
-      <div classname="relative w-full">
+      <div className="relative w-full">
         <Hero />
-        <div>Hello World</div>
+        <div className="text-4xl text-center font-bold text-gray-800">
+          Hello World
+        </div>
       </div>
     </Layout>
   );
