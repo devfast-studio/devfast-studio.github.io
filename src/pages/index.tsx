@@ -1,13 +1,8 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Layout from 'components/layout';
+import Home from 'pages/home';
 
-function Home() {
-  return (
-    <Layout title="MyBrand | Example" description="Hello world description">
-      <div>Hello World</div>
-    </Layout>
-  );
+export default function Root() {
+  return <Home />;
 }
-
-export default Home;
