@@ -1,14 +1,11 @@
 import { useCallback } from 'react';
 import Particles from 'react-tsparticles';
+import type { Container, Engine } from 'tsparticles-engine';
 import { loadFull } from 'tsparticles';
 
 export default function ParticleBackground() {
-  const particlesInit = useCallback(async (engine) => {
+  const particlesInit = useCallback(async (engine: Engine) => {
     await loadFull(engine);
-  }, []);
-
-  const particlesLoaded = useCallback(async (container) => {
-    await console.log(container);
   }, []);
 
   return (
@@ -16,7 +13,6 @@ export default function ParticleBackground() {
       id="particle-background"
       className="relative w-full h-full"
       init={particlesInit}
-      loaded={particlesLoaded}
       options={{
         fullScreen: false,
         background: {
@@ -62,7 +58,6 @@ export default function ParticleBackground() {
             enable: false
           },
           move: {
-            directions: 'none',
             enable: true,
             outModes: {
               default: 'bounce'

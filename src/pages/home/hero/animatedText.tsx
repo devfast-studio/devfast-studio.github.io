@@ -49,9 +49,11 @@ export default function AnimatedText(props: {
             return (
               <div
                 key={uuid()}
-                style={{
-                  '--animate-duration': `${3}s`
-                }}
+                style={
+                  {
+                    '--animate-duration': `${3}s`
+                  } as any
+                }
                 className={[
                   'animate__animated animate__fadeIn',
                   className
