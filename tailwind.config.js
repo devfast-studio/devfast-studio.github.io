@@ -9,13 +9,20 @@ module.exports = {
     extend: {
       backgroundColor: {
         primary: '#fdfffc',
-        black: '020100',
+        black: '#020100',
+        gray: '#c5cbd3',
         orange: '#f96815'
       },
       textColor: {
+        primary: '#fdfffc',
+        black: '#020100',
+        gray: '#c5cbd3',
         orange: '#f96815'
       },
       borderColor: {
+        primary: '#fdfffc',
+        black: '#020100',
+        gray: '#c5cbd3',
         orange: '#f96815'
       }
     }

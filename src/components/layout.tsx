@@ -15,7 +15,7 @@ export default function Layout({
   description?: string;
 }) {
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray">
       <Head>
         <link
           rel="apple-touch-icon"

@@ -81,8 +81,8 @@ export default function Navbar() {
                           <span
                             className={`${
                               active
-                                ? 'bg-gray-100 text-gray-900'
-                                : 'text-gray-700'
+                                ? 'bg-gray text-black'
+                                : 'text-gray'
                             } group flex items-center px-2 py-2 text-sm font-medium rounded-md cursor-pointer`}
                           >
                             {item.name}
