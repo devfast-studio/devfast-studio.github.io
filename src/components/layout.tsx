@@ -43,7 +43,7 @@ export default function Layout({
         <meta property="og:description" content={description} />
       </Head>
       <Navbar />
-      <main className="max-w-4xl">{children}</main>
+      <main>{children}</main>
       <Footer />
     </div>
   );

@@ -1,8 +1,9 @@
+import { COLOR } from 'constants/styles';
 import * as React from 'react';
 import { SVGProps } from 'react';
 
 function TigerIcon(props: SVGProps<SVGSVGElement>) {
-  const { width = 40, height = 40, color = '#f96815' } = props;
+  const { width = 40, height = 40, color = COLOR.orange } = props;
 
   return (
     <svg

@@ -6,7 +6,19 @@ module.exports = {
     '!./node_modules'
   ],
   theme: {
-    extend: {}
+    extend: {
+      backgroundColor: {
+        primary: '#fdfffc',
+        black: '020100',
+        orange: '#f96815'
+      },
+      textColor: {
+        orange: '#f96815'
+      },
+      borderColor: {
+        orange: '#f96815'
+      }
+    }
   },
   variants: {
     extend: {}

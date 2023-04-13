@@ -5,7 +5,7 @@ import AnimatedButton from './animatedButton';
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative w-screen h-[50vh] select-none">
+    <section id="hero" className="relative h-[50vh] select-none">
       <ParticleBackground />
       <div className="absolute inset-0 flex flex-col justify-center items-center">
         <AnimatedText
@@ -22,7 +22,7 @@ export default function Hero() {
       <AnimatedButton
         href="/about"
         label="Learn more"
-        className="absolute bottom-[50px] left-[50%] transform -translate-x-1/2 bg-[#f96815] text-white"
+        className="absolute bottom-[50px] left-[50%] transform -translate-x-1/2 bg-orange text-white"
       />
     </section>
   );
