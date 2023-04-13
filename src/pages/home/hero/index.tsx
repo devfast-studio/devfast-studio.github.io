@@ -1,28 +1,29 @@
-// Import necessary libraries and components
 import React from 'react';
 import ParticleBackground from './particleBackground';
 import AnimatedText from './animatedText';
-// import AnimatedText from './AnimatedText';
-// import AnimatedCTA from './AnimatedCTA';
+import AnimatedButton from './animatedButton';
 
-// component: Hero
-// props: none
-// state: none
-// functions: none
-// effects: none
-// callbacks: none
-const Hero = () => {
+export default function Hero() {
   return (
     <section id="hero" className="relative w-screen h-[50vh]">
-      {/* Uncomment the following lines after implementing the missing components */}
       <ParticleBackground />
       <div className="absolute inset-0 flex flex-col justify-center items-center">
-        <AnimatedText phrases={['Hello,', 'Welcome,', 'Hi,']} />
-        <span> {"I'm Yeh Hsuan Ting, a web developer."}</span>
+        <AnimatedText
+          className="text-[20px] md:text-[33px] text-center font-bold text-gray-800 mx-[5vw] md:mx-[10vw] leading-12"
+          phrases={[
+            'First, solve the problem. Then, write the code.\n - John Johnson',
+            'Do one thing and do it well.\n - Doug McIlroy',
+            'Simplicity is prerequisite for reliability.\n - Edsger W. Dijkstra',
+            'Simplicity is the soul of efficiency.\n - Austin Freeman'
+          ]}
+          timeout={5000}
+        />
       </div>
-      {/* <AnimatedCTA text="Learn more" href="/about" /> */}
+      <AnimatedButton
+        href="/about"
+        label="Learn more"
+        className="absolute bottom-[50px] left-[50%] transform -translate-x-1/2 bg-[#f96815] text-white"
+      />
     </section>
   );
-};
-
-export default Hero;
+}

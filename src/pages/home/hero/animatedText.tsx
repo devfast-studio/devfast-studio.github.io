@@ -2,8 +2,18 @@ import { nanoid } from 'nanoid';
 import { useEffect, useState } from 'react';
 import { uuid } from 'uuidv4';
 
-export default function AnimatedText(props: { phrases: string[] }) {
-  const { phrases } = props;
+/**
+ * AnimatedText
+ * @param phrases - An array of phrases to be animated. There should be at least 2 phrases.
+ * @returns A React component that animates the phrases.
+ */
+export default function AnimatedText(props: {
+  phrases: string[];
+  className?: string;
+  duration?: number;
+  timeout?: number;
+}) {
+  const { phrases, className = '', duration = 3, timeout = 4000 } = props;
 
   const [activeIndex, setActiveIndex] = useState(1);
   const [startAnimation, setStartAnimation] = useState(false);
@@ -23,7 +33,7 @@ export default function AnimatedText(props: { phrases: string[] }) {
           currentTarget.classList.remove('animate__fadeIn');
           currentTarget.classList.add('animate__fadeOut');
         }
-      }, 2000);
+      }, timeout);
     }
   }
 
@@ -37,16 +47,21 @@ export default function AnimatedText(props: { phrases: string[] }) {
         {phrases.map((phrase, index) => {
           if (index === activeIndex) {
             return (
-              <p
+              <div
                 key={uuid()}
                 style={{
-                  '--animate-duration': '3s'
+                  '--animate-duration': `${3}s`
                 }}
-                className="animate__animated animate__fadeIn"
+                className={[
+                  'animate__animated animate__fadeIn',
+                  className
+                ].join(' ')}
                 onAnimationEnd={handleAnimationend}
               >
-                {phrase}
-              </p>
+                {phrase.split('\n').map((line, index) => (
+                  <p key={uuid()}>{line}</p>
+                ))}
+              </div>
             );
           }
         })}
@@ -55,14 +70,16 @@ export default function AnimatedText(props: { phrases: string[] }) {
   }
 
   return (
-    <p
+    <div
       style={{
-        'animation-delay': '2s'
+        animationDelay: '2s'
       }}
-      className="animate__animated animate__fadeOut"
+      className={['animate__animated animate__fadeOut', className].join(' ')}
       onAnimationEnd={handlePlaceHolderAnimationend}
     >
-      {phrases[0]}
-    </p>
+      {phrases[0].split('\n').map((line, index) => (
+        <p key={uuid()}>{line}</p>
+      ))}
+    </div>
   );
 }
