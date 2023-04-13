@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { Menu, Transition } from '@headlessui/react';
+import { TigerIcon } from 'components/icons';
 
 const navItems = [
   { name: 'Home', href: '/' },
@@ -21,8 +22,9 @@ export default function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between py-4 z-10">
           <Link href="/" passHref>
-            <span className="text-2xl font-semibold cursor-pointer">
-              Your Brand
+            <span className="flex items-center text-2xl font-semibold cursor-pointer">
+              <TigerIcon />
+              <p className="ml-4">Tiger Studio</p>
             </span>
           </Link>
 
