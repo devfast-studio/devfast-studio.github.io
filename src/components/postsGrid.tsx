@@ -20,21 +20,11 @@ function PostCard({ post }: { post: Post }) {
   return (
     <div className="bg-white rounded-md p-6 w-full md:w-auto mb-8 md:mb-0 shadow-md">
       <h3 className="text-xl font-semibold mb-2">
-        <Link
-          className="text-orange hover:text-orange-dark"
-          href={`/blog/${post.slug}`}
-        >
-          {post.title}
-        </Link>
+        <Link href={`/blog/${post.slug}`}>{post.title}</Link>
       </h3>
       <p className="text-gray-500 text-sm mb-4">{post.date}</p>
       <p className="text-gray-700 mb-4">{post.excerpt}</p>
-      <Link
-        className="text-orange hover:text-orange-dark"
-        href={`/blog/${post.slug}`}
-      >
-        Read More
-      </Link>
+      <Link href={`/blog/${post.slug}`}>Read More</Link>
     </div>
   );
 }
