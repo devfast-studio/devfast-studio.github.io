@@ -24,7 +24,6 @@ export default function Contact() {
   return (
     <Layout>
       <div className="container mx-auto px-4 py-12">
-        <h1 className="text-4xl font-bold text-center mb-10">Get in touch</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="contact-form">
             <h2 className="text-2xl font-semibold mb-4">Send a message</h2>

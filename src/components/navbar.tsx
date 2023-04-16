@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { Menu, Transition } from '@headlessui/react';
 import { TigerIcon } from 'components/icons';
+import { uuid } from 'uuidv4';
 
 const navItems = [
   { name: 'Home', href: '/' },
@@ -75,14 +76,12 @@ export default function Navbar() {
               >
                 <div className="px-1 py-1">
                   {navItems.map((item) => (
-                    <Menu.Item key={item.name}>
+                    <Menu.Item key={uuid()}>
                       {({ active }) => (
                         <Link href={item.href} passHref>
                           <span
                             className={`${
-                              active
-                                ? 'bg-gray text-black'
-                                : 'text-gray'
+                              active ? 'bg-gray text-black' : 'text-gray'
                             } group flex items-center px-2 py-2 text-sm font-medium rounded-md cursor-pointer`}
                           >
                             {item.name}

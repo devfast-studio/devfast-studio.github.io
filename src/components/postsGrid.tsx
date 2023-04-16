@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import type { Post } from 'types/data/post';
+import { uuid } from 'uuidv4';
 
 interface PostsGridProps {
   posts: Post[];
@@ -10,7 +11,7 @@ export default function PostsGrid({ posts }: PostsGridProps) {
   return (
     <div className="flex flex-wrap md:overflow-x-auto md:flex-nowrap md:space-x-8 py-8 md:pb-8 px-4">
       {posts.map((post) => (
-        <PostCard key={post.slug} post={post} />
+        <PostCard key={uuid()} post={post} />
       ))}
     </div>
   );
