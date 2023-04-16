@@ -1,10 +1,6 @@
 import React from 'react';
 import { FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa';
-
-interface SocialIconProps {
-  link: string;
-  Icon: React.FC;
-}
+import SocialIcon from 'components/socialIcon';
 
 export default function Footer() {
   return (
@@ -20,13 +16,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  );
-}
-
-function SocialIcon({ link, Icon }: SocialIconProps) {
-  return (
-    <a href={link} target="_blank" rel="noreferrer">
-      <Icon />
-    </a>
   );
 }
