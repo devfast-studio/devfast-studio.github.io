@@ -1,13 +1,15 @@
-import Head from 'next/head';
-import Image from 'next/image';
+import React from 'react';
 import Layout from 'components/layout';
+import ProfileSection from './profileSection';
 
-function Profile() {
+function About() {
   return (
-    <Layout title="MyBrand | Example" description="Hello world description">
-      <div>Profile page Hello World</div>
+    <Layout title="MyBrand | About" description="About me and my services">
+      <div className="relative w-full">
+        <ProfileSection />
+      </div>
     </Layout>
   );
 }
 
-export default Profile;
+export default About;
