@@ -54,5 +54,9 @@ function Excerpt(props: { body: TinaMarkdownContent }) {
 
   const content = firstParagraph.children[0].text;
 
+  if (content.length > 350) {
+    return <p className="text-gray-700 mb-4">{content.slice(0, 350)}...</p>;
+  }
+
   return <p className="text-gray-700 mb-4">{content}</p>;
 }
