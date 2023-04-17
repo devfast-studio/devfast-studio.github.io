@@ -1,4 +1,6 @@
 fragment PostParts on Post {
   title
+  date
+  tags
   body
 }

@@ -1,14 +1,14 @@
 import React from 'react';
 import PostsGrid from 'components/postsGrid';
-import type { Post } from 'types/data/post';
+import type { FeaturedPost } from 'types/data/post';
 
 interface FeaturedPostsProps {
-  posts: Post[];
+  posts: FeaturedPost[];
 }
 
 export default function FeaturedPosts({ posts }: FeaturedPostsProps) {
   if (posts.length === 0) {
-    return <p>No featured posts available.</p>;
+    return null;
   }
 
   return (

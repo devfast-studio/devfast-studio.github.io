@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "tinacms dev -c \"next dev\"",
+    "dev": "tinacms dev --verbose -c \"next dev\"",
     "build": "tinacms build && next build && next export",
     "start": "tinacms build && serve out",
     "lint": "next lint",

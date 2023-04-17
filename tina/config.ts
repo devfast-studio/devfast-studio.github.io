@@ -32,19 +32,34 @@ export default defineConfig({
             name: 'title',
             label: 'Title',
             isTitle: true,
-            required: true
+            required: true,
+            namespace: ['post', 'title']
+          },
+
+          {
+            type: 'datetime',
+            name: 'date',
+            label: 'Date',
+            required: true,
+            namespace: ['post', 'date']
+          },
+          {
+            type: 'string',
+            name: 'tags',
+            label: 'Tags',
+            list: true
           },
           {
             type: 'rich-text',
             name: 'body',
             label: 'Body',
-            isBody: true
+            isBody: true,
+            namespace: ['post', 'body'],
+            parser: { type: 'markdown' }
           }
         ],
-        ui: {
-          // This is an DEMO router. You can remove this to fit your site
-          router: ({ document }) => `/demo/blog/${document._sys.filename}`
-        }
+        ui: {},
+        namespace: ['post']
       }
     ]
   }

@@ -1,8 +1,10 @@
-interface Post {
+import type { TinaMarkdownContent } from 'tinacms/dist/rich-text';
+
+interface FeaturedPost {
   slug: string;
   title: string;
   date: string;
-  excerpt: string;
+  body: TinaMarkdownContent;
 }
 
-export type { Post };
+export type { FeaturedPost };

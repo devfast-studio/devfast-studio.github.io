@@ -1,10 +1,17 @@
 import React from 'react';
 import Link from 'next/link';
-import type { Post } from 'types/data/post';
-import { uuid } from 'uuidv4';
+import type { FeaturedPost } from 'types/data/post';
+import { v4 as uuid } from 'uuid';
+import { TinaMarkdown, TinaMarkdownContent } from 'tinacms/dist/rich-text';
 
 interface PostsGridProps {
-  posts: Post[];
+  posts: FeaturedPost[];
+}
+
+interface FirstParagraph {
+  children: {
+    text: string;
+  }[];
 }
 
 export default function PostsGrid({ posts }: PostsGridProps) {
@@ -17,15 +24,35 @@ export default function PostsGrid({ posts }: PostsGridProps) {
   );
 }
 
-function PostCard({ post }: { post: Post }) {
+function PostCard({ post }: { post: FeaturedPost }) {
   return (
-    <div className="bg-white rounded-md p-6 w-full md:w-auto mb-8 md:mb-0 shadow-md">
+    <div className="bg-white rounded-md p-6 w-full md:w-1/3 mb-8 md:mb-0 shadow-md">
       <h3 className="text-xl font-semibold mb-2">
         <Link href={`/blog/${post.slug}`}>{post.title}</Link>
       </h3>
-      <p className="text-gray-500 text-sm mb-4">{post.date}</p>
-      <p className="text-gray-700 mb-4">{post.excerpt}</p>
+      <p className="text-gray-500 text-sm mb-4">
+        {new Date(post.date).toDateString()}
+      </p>
+      <Excerpt body={post.body} />
       <Link href={`/blog/${post.slug}`}>Read More</Link>
     </div>
   );
+}
+
+function Excerpt(props: { body: TinaMarkdownContent }) {
+  const { body } = props;
+
+  const firstParagraph: FirstParagraph = (body.children.find((child) => {
+    return child.type === 'p';
+  }) as any) ?? {
+    children: [
+      {
+        text: 'Sorry, no content.'
+      }
+    ]
+  };
+
+  const content = firstParagraph.children[0].text;
+
+  return <p className="text-gray-700 mb-4">{content}</p>;
 }

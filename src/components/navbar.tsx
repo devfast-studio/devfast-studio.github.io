@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { Menu, Transition } from '@headlessui/react';
 import { TigerIcon } from 'components/icons';
-import { uuid } from 'uuidv4';
+import { v4 as uuid } from 'uuid';
 
 const navItems = [
   { name: 'Home', href: '/' },

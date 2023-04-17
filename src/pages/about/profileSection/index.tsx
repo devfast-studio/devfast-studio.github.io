@@ -3,14 +3,12 @@ import Service from './service';
 import PersonalInfo from './personalInfo';
 import ContactButton from './contactButton';
 
-function ProfileSection() {
+export default function ProfileSection() {
   return (
-    <section className="px-4 md:px-8 py-12 md:py-24 bg-primary">
+    <section className="px-4 md:px-8 py-6 md:py-12 bg-primary">
       <Service />
       <PersonalInfo />
       <ContactButton />
     </section>
   );
 }
-
-export default ProfileSection;
