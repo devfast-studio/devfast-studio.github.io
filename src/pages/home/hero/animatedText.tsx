@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid';
 import { useEffect, useState } from 'react';
-import { uuid } from 'uuidv4';
+import { v4 as uuid } from 'uuid';
 
 /**
  * AnimatedText

@@ -1,7 +1,7 @@
 import React from 'react';
 import ParticleBackground from './particleBackground';
 import AnimatedText from './animatedText';
-import AnimatedButton from './animatedButton';
+import LearnMoreButton from './learnMoreButton';
 
 export default function Hero() {
   return (
@@ -19,7 +19,7 @@ export default function Hero() {
           timeout={5000}
         />
       </div>
-      <AnimatedButton
+      <LearnMoreButton
         href="/about"
         label="Learn more"
         className="absolute bottom-[50px] left-[50%] transform -translate-x-1/2 bg-orange text-white"
