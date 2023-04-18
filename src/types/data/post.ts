@@ -7,4 +7,10 @@ interface FeaturedPost {
   body: TinaMarkdownContent;
 }
 
-export type { FeaturedPost };
+interface PostData {
+  title: string;
+  date: string;
+  body: TinaMarkdownContent;
+}
+
+export type { FeaturedPost, PostData };
