@@ -1,6 +1,6 @@
 import Layout from 'components/layout';
+import { getStaticPropsForBlog } from 'lib/staticPropsAndPaths/blog';
 import Link from 'next/link';
-import { client } from '../../../tina/__generated__/client';
 import { v4 as uuid } from 'uuid';
 
 export default function Blog(props: {
@@ -33,21 +33,4 @@ export default function Blog(props: {
   );
 }
 
-export async function getStaticProps() {
-  const { data } = await client.queries.postConnection();
-
-  const postList = data.postConnection.edges?.map((edge) => {
-    return {
-      slug: edge?.node?._sys?.filename ?? '',
-      title: edge?.node?.title ?? '',
-      date: edge?.node?.date ?? '',
-      tags: edge?.node?.tags ?? []
-    };
-  });
-
-  return {
-    props: {
-      postList
-    }
-  };
-}
+export const getStaticProps = getStaticPropsForBlog;

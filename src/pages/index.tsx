@@ -1,14 +1,12 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import Layout from 'components/layout';
 import Home from 'pages/home';
-import getStaticPropsForHome from 'lib/getStaticProps/home';
+import { getStaticPropsForHome } from 'lib/staticPropsAndPaths/home';
 import type { GetStaticProps } from 'next';
+import type { FeaturedPost } from 'types/data/post';
 
-export default function Root(props: { data: any }) {
-  const { data } = props;
+export default function Root(props: { featuredPosts: FeaturedPost[] }) {
+  const { featuredPosts } = props;
 
-  return <Home featuredPosts={data} />;
+  return <Home featuredPosts={featuredPosts} />;
 }
 
 export const getStaticProps: GetStaticProps = getStaticPropsForHome;

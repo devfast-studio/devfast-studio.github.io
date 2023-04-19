@@ -2,6 +2,7 @@ import Layout from 'components/layout';
 import { client } from '../../../tina/__generated__/client';
 import Post from 'components/post';
 import type { PostData } from 'types/data/post';
+import { getStaticPropsForBlogArticle } from 'lib/staticPropsAndPaths/blogArticle';
 
 export default function BlogPage(props: { post: PostData }) {
   const { post } = props;
@@ -27,18 +28,4 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps(ctx: { params: { slug: string } }) {
-  const {
-    params: { slug }
-  } = ctx;
-
-  const { data } = await client.queries.post({
-    relativePath: slug + '.md'
-  });
-
-  return {
-    props: {
-      post: data.post
-    }
-  };
-}
+export const getStaticProps = getStaticPropsForBlogArticle;
