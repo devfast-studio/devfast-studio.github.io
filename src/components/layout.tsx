@@ -1,7 +1,5 @@
-import { useState, ReactNode } from 'react';
-import Link from 'next/link';
+import { ReactNode } from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
 import Footer from 'components/footer';
 import Navbar from 'components/navbar';
 
@@ -43,7 +41,7 @@ export default function Layout({
         <meta property="og:description" content={description} />
       </Head>
       <Navbar />
-      <main>{children}</main>
+      <main className="px-5 md:px-20 mt-5 max-w-[1440px] mx-auto">{children}</main>
       <Footer />
     </>
   );

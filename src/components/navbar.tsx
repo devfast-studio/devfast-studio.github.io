@@ -20,7 +20,7 @@ export default function Navbar() {
 
   return (
     <nav className="bg-white shadow">
-      <div className="container mx-auto px-4">
+      <div className="px-5 md:px-20 max-w-[1440px] mx-auto">
         <div className="flex items-center justify-between py-4 z-10">
           <Link href="/" passHref>
             <span className="flex items-center text-2xl font-semibold cursor-pointer">
