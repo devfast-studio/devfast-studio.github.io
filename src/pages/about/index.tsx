@@ -5,9 +5,7 @@ import ProfileSection from './profileSection';
 export default function About() {
   return (
     <Layout title="MyBrand | About" description="About me and my services">
-      <div className="relative w-full">
-        <ProfileSection />
-      </div>
+      <ProfileSection />
     </Layout>
   );
 }

@@ -19,7 +19,7 @@ export async function getStaticPropsForBlog(context: {
   return {
     props: {
       postList,
-      page,
+      currentPage: page,
       totalPages
     }
   };

@@ -8,10 +8,8 @@ export default function Home(props: { featuredPosts: FeaturedPost[] }) {
 
   return (
     <Layout title="MyBrand | Example" description="Hello world description">
-      <div className="relative w-full bg-primary">
-        <Hero />
-        <FeaturedPosts posts={featuredPosts} />
-      </div>
+      <Hero />
+      <FeaturedPosts posts={featuredPosts} />
     </Layout>
   );
 }

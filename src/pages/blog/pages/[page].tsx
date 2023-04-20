@@ -1,19 +1,21 @@
-// // pages/blog/[page].tsx
-// import { GetStaticProps, GetStaticPaths } from 'next';
-// import { ParsedUrlQuery } from 'querystring';
-// import {
-//   getStaticPropsForBlogPage,
-//   getStaticPathsForBlogPages
-// } from 'lib/staticPropsAndPaths/blog';
+import { GetStaticProps, GetStaticPaths } from 'next';
+import Blog from '../blog';
+import {
+  getStaticPropsForBlog,
+  getStaticPathsForBlogPages
+} from 'lib/staticPropsAndPaths/blog';
+import type { BlogProps } from 'types/pages/blog';
 
-// export { default } from 'components/blog';
-// export const getStaticProps: GetStaticProps = async (context) => {
-//   return getStaticPropsForBlogPage(context);
-// };
-// export const getStaticPaths: GetStaticPaths = async () => {
-//   return getStaticPathsForBlogPages();
-// };
-
-export function hi() {
-  console.log(123);
+function BlogPage(props: BlogProps) {
+  return <Blog {...props} />;
 }
+
+export default BlogPage;
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  return getStaticPropsForBlog(context);
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return getStaticPathsForBlogPages();
+};
