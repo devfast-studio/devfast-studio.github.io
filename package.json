@@ -7,6 +7,7 @@
     "build": "tinacms build && next build && next export",
     "start": "tinacms build && serve out",
     "lint": "next lint",
+    "lint:fix": "next lint --fix",
     "format": "prettier --loglevel warn --write \"./src/{components,pages,utils}/**/*.{ts,tsx,js,jsx}\"",
     "ts:watch": "tsc --noEmit --watch"
   },

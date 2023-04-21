@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import type { FeaturedPost } from 'types/data/post';
 import { v4 as uuid } from 'uuid';
-import { TinaMarkdown, TinaMarkdownContent } from 'tinacms/dist/rich-text';
+import { TinaMarkdownContent } from 'tinacms/dist/rich-text';
 
 interface PostsGridProps {
   posts: FeaturedPost[];
@@ -44,6 +44,7 @@ function Excerpt(props: { body: TinaMarkdownContent }) {
 
   const firstParagraph: FirstParagraph = (body.children.find((child) => {
     return child.type === 'p';
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   }) as any) ?? {
     children: [
       {

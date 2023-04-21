@@ -1,5 +1,4 @@
-import { nanoid } from 'nanoid';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { v4 as uuid } from 'uuid';
 
 /**
@@ -51,7 +50,8 @@ export default function AnimatedText(props: {
                 key={uuid()}
                 style={
                   {
-                    '--animate-duration': `${3}s`
+                    '--animate-duration': `${duration}s`
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
                   } as any
                 }
                 className={[
@@ -60,7 +60,7 @@ export default function AnimatedText(props: {
                 ].join(' ')}
                 onAnimationEnd={handleAnimationend}
               >
-                {phrase.split('\n').map((line, index) => (
+                {phrase.split('\n').map((line) => (
                   <p key={uuid()}>{line}</p>
                 ))}
               </div>
@@ -79,7 +79,7 @@ export default function AnimatedText(props: {
       className={['animate__animated animate__fadeOut', className].join(' ')}
       onAnimationEnd={handlePlaceHolderAnimationend}
     >
-      {phrases[0].split('\n').map((line, index) => (
+      {phrases[0].split('\n').map((line) => (
         <p key={uuid()}>{line}</p>
       ))}
     </div>
