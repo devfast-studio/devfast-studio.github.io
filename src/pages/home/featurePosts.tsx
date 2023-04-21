@@ -3,10 +3,12 @@ import PostsGrid from 'components/postsGrid';
 import type { FeaturedPost } from 'types/data/post';
 
 interface FeaturedPostsProps {
-  posts: FeaturedPost[];
+  posts?: FeaturedPost[];
 }
 
-export default function FeaturedPosts({ posts }: FeaturedPostsProps) {
+export default function FeaturedPosts(props: FeaturedPostsProps) {
+  const { posts = [] } = props;
+
   if (posts.length === 0) {
     return null;
   }

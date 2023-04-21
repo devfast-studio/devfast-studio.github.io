@@ -2,10 +2,10 @@ import Link from 'next/link';
 
 export default function LearnMoreButton(props: {
   label: string;
-  href: string;
+  href?: string;
   className?: string;
 }) {
-  const { label, href, className = '' } = props;
+  const { label, href = '', className = '' } = props;
 
   return (
     <Link

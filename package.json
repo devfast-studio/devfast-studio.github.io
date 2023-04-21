@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "tinacms dev --verbose -c \"next dev\"",
     "build": "tinacms build && next build && next export",
-    "start": "tinacms build && serve out",
+    "start": "tinacms build && serve build",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "format": "prettier --loglevel warn --write \"./src/{components,pages,utils}/**/*.{ts,tsx,js,jsx}\"",

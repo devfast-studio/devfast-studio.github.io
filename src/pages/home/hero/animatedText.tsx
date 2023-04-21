@@ -7,12 +7,12 @@ import { v4 as uuid } from 'uuid';
  * @returns A React component that animates the phrases.
  */
 export default function AnimatedText(props: {
-  phrases: string[];
+  phrases?: string[];
   className?: string;
   duration?: number;
   timeout?: number;
 }) {
-  const { phrases, className = '', duration = 3, timeout = 4000 } = props;
+  const { phrases = [], className = '', duration = 3, timeout = 4000 } = props;
 
   const [activeIndex, setActiveIndex] = useState(1);
   const [startAnimation, setStartAnimation] = useState(false);
@@ -51,7 +51,7 @@ export default function AnimatedText(props: {
                 style={
                   {
                     '--animate-duration': `${duration}s`
-                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                   } as any
                 }
                 className={[

@@ -50,8 +50,12 @@ export default function Post(props: { post: PostData }) {
 
   return (
     <div className="px-4 sm:px-6 lg:px-8 py-8 rounded-lg shadow-md">
-      <p className="text-right">{new Date(post.date).toDateString()}</p>
-      <TinaMarkdown components={components} content={post.body} />
+      {post.date && (
+        <p className="text-right">{new Date(post.date).toDateString()}</p>
+      )}
+      {post.body && (
+        <TinaMarkdown components={components} content={post.body} />
+      )}
     </div>
   );
 }
