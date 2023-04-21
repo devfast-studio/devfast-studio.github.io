@@ -10,7 +10,7 @@ export default function Blog(props: BlogProps) {
   return (
     <Layout>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {postList.map((post) => (
+        {postList?.map((post) => (
           <PostItem key={uuid()} {...post} />
         ))}
       </div>
@@ -20,12 +20,12 @@ export default function Blog(props: BlogProps) {
 }
 
 function PostItem(props: {
-  title: string;
-  date: string;
-  tags: string[];
-  slug: string;
+  title?: string;
+  date?: string;
+  tags?: string[];
+  slug?: string;
 }) {
-  const { title, date, tags, slug } = props;
+  const { title = '', date = '', tags = [], slug = '' } = props;
 
   return (
     <div className="bg-white p-5 shadow-lg rounded-md">
@@ -37,7 +37,7 @@ function PostItem(props: {
       </Link>
       <p className="text-sm text-gray-500 mt-2">{date}</p>
       <ul className="flex flex-wrap mt-3">
-        {tags.map((tag) => (
+        {tags?.map((tag = '') => (
           <li
             key={uuid()}
             className="text-gray-600 border border-gray-300 px-2 py-1 rounded-md mr-2 mb-2"

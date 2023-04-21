@@ -23,7 +23,7 @@ const services = [
 export default function Service() {
   return (
     <div className="grid grid-cols-1 gap-6">
-      {services.map((service, index) => (
+      {services.map((service) => (
         <ServiceCard key={uuid()} {...service} />
       ))}
     </div>

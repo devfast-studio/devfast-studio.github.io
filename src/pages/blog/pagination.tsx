@@ -1,14 +1,13 @@
-// components/Pagination.tsx
 import React from 'react';
 import Link from 'next/link';
 
 interface PaginationProps {
-  currentPage: number;
-  totalPages: number;
+  currentPage?: number;
+  totalPages?: number;
 }
 
 function Pagination(props: PaginationProps) {
-  const { currentPage, totalPages } = props;
+  const { currentPage = 1, totalPages = 1 } = props;
 
   const hasPreviousPage = currentPage > 1;
   const hasNextPage = currentPage < totalPages;
