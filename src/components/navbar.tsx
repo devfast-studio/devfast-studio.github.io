@@ -20,12 +20,12 @@ export default function Navbar() {
 
   return (
     <nav className="bg-white shadow">
-      <div className="px-5 md:px-20 max-w-[1440px] mx-auto">
+      <div className="container">
         <div className="flex items-center justify-between py-4 z-10">
           <Link href="/" passHref>
             <span className="flex items-center text-2xl font-semibold cursor-pointer">
               <TigerIcon />
-              <p className="ml-4">Tiger Studio</p>
+              <p className="ml-4">Code Tiger</p>
             </span>
           </Link>
 

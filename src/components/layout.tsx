@@ -41,7 +41,7 @@ export default function Layout({
         <meta property="og:description" content={description} />
       </Head>
       <Navbar />
-      <main className="px-5 md:px-20 mt-5 max-w-[1440px] mx-auto">{children}</main>
+      <main className="container mt-5">{children}</main>
       <Footer />
     </>
   );
