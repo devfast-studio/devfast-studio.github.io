@@ -1,24 +1,7 @@
 import Layout from 'components/layout';
+import { SOCIAL_LINKS } from 'constants/config';
 import React from 'react';
-import { FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa';
-
-const socialLinks = [
-  {
-    name: 'Twitter',
-    link: 'https://twitter.com',
-    Icon: FaTwitter
-  },
-  {
-    name: 'GitHub',
-    link: 'https://github.com',
-    Icon: FaGithub
-  },
-  {
-    name: 'LinkedIn',
-    link: 'https://linkedin.com',
-    Icon: FaLinkedin
-  }
-];
+import { v4 as uuid } from 'uuid';
 
 export default function Contact() {
   return (
@@ -57,20 +40,23 @@ export default function Contact() {
         <div className="contact-info">
           <h2 className="text-2xl font-semibold mb-4">Contact info</h2>
           <p className="mb-4">Yeh Hsuan Ting</p>
-          <p className="mb-4">Email: yeh@example.com</p>
-          <p className="mb-4">Phone: +1 (123) 456-7890</p>
+          <p className="mb-4">Email: notiger.yeh@gmail.com</p>
           <h3 className="text-xl font-semibold mb-2">Social Links</h3>
           <div className="flex space-x-4">
-            {socialLinks.map((socialLink, index) => (
-              <a
-                key={index}
-                href={socialLink.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <socialLink.Icon className="text-orange" />
-              </a>
-            ))}
+            {SOCIAL_LINKS.map((socialLink) => {
+              const { link, Icon } = socialLink;
+
+              return (
+                <a
+                  key={uuid()}
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon className="hover:text-orange-500" />
+                </a>
+              );
+            })}
           </div>
         </div>
       </div>
