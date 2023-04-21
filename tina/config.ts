@@ -2,8 +2,8 @@ import { defineConfig } from 'tinacms';
 
 // Your hosting provider likely exposes this as an environment variable
 const BRANCH = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || 'main';
-const CLIENT_ID = String(process.env.TINA_CLIENT_ID);
-const TOKEN = String(process.env.TINA_TOKEN);
+const CLIENT_ID = String(process.env.TINA_CLIENT_ID ?? '');
+const TOKEN = String(process.env.TINA_TOKEN ?? '');
 
 export default defineConfig({
   branch: BRANCH,
@@ -32,19 +32,34 @@ export default defineConfig({
             name: 'title',
             label: 'Title',
             isTitle: true,
-            required: true
+            required: true,
+            namespace: ['post', 'title']
+          },
+
+          {
+            type: 'datetime',
+            name: 'date',
+            label: 'Date',
+            required: true,
+            namespace: ['post', 'date']
+          },
+          {
+            type: 'string',
+            name: 'tags',
+            label: 'Tags',
+            list: true
           },
           {
             type: 'rich-text',
             name: 'body',
             label: 'Body',
-            isBody: true
+            isBody: true,
+            namespace: ['post', 'body'],
+            parser: { type: 'markdown' }
           }
         ],
-        ui: {
-          // This is an DEMO router. You can remove this to fit your site
-          router: ({ document }) => `/demo/blog/${document._sys.filename}`
-        }
+        ui: {},
+        namespace: ['post']
       }
     ]
   }

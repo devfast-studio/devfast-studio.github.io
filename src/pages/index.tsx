@@ -1,13 +1,12 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import Layout from 'components/layout';
+import Home from 'pages/home';
+import { getStaticPropsForHome } from 'lib/staticPropsAndPaths/home';
+import type { GetStaticProps } from 'next';
+import type { FeaturedPost } from 'types/data/post';
 
-function Home() {
-  return (
-    <Layout title="MyBrand | Example" description="Hello world description">
-      <div>Hello World</div>
-    </Layout>
-  );
+export default function Root(props: { featuredPosts: FeaturedPost[] }) {
+  const { featuredPosts } = props;
+
+  return <Home featuredPosts={featuredPosts} />;
 }
 
-export default Home;
+export const getStaticProps: GetStaticProps = getStaticPropsForHome;
