@@ -53,7 +53,7 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Icon className="hover:text-orange-500" />
+                  <Icon className="hover:text-orange" />
                 </a>
               );
             })}

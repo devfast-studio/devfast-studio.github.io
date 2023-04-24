@@ -30,15 +30,17 @@ function PostCard(props: { post: FeaturedPost }) {
   } = props;
 
   return (
-    <div className="bg-white rounded-md p-6 w-full md:w-1/3 mb-8 md:mb-0 shadow-md">
-      <h3 className="text-xl font-semibold mb-2">
+    <div className="rounded-md p-6 w-full md:w-1/3 mb-8 md:mb-0 shadow-md">
+      <h3 className="text-xl font-semibold mb-2 hover:text-orange">
         <Link href={`/blog/${slug}`}>{title}</Link>
       </h3>
       <p className="text-gray-500 text-sm mb-4">
         {new Date(date).toDateString()}
       </p>
       <Excerpt body={body} />
-      <Link href={`/blog/${slug}`}>Read More</Link>
+      <Link className="hover:text-orange" href={`/blog/${slug}`}>
+        Read More
+      </Link>
     </div>
   );
 }
@@ -60,8 +62,8 @@ function Excerpt(props: { body?: TinaMarkdownContent }) {
   const content = firstParagraph.children[0].text;
 
   if (content.length > 350) {
-    return <p className="text-gray-700 mb-4">{content.slice(0, 350)}...</p>;
+    return <p className="text-gray-900 mb-4">{content.slice(0, 350)}...</p>;
   }
 
-  return <p className="text-gray-700 mb-4">{content}</p>;
+  return <p className="text-gray-900 mb-4">{content}</p>;
 }

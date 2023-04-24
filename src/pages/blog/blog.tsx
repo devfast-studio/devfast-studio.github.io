@@ -30,7 +30,7 @@ function PostItem(props: {
   return (
     <div className="bg-white p-5 shadow-lg rounded-md">
       <Link
-        className="text-2xl font-bold text-gray-700 hover:text-orange-500"
+        className="text-2xl font-bold text-gray-700 hover:text-orange"
         href={`/blog/${slug}`}
       >
         {title}
