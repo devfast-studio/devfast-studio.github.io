@@ -40,7 +40,7 @@ Here's a brief overview of the topics we cover in the course:
 ## Outline
 
 1. Introduction to TypeScript
-   1.1. TypeScript basics and syntax
+   1.1. [TypeScript basics and syntax](https://code-tiger.github.io/blog/typescript-basics-and-syntax)
    1.2. TypeScript compiler and configuration
    1.3. Types and interfaces
    1.4. Classes and inheritance
