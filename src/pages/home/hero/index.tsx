@@ -22,7 +22,7 @@ export default function Hero() {
       <LearnMoreButton
         href="/about"
         label="Learn more"
-        className="absolute bottom-[50px] left-[50%] transform -translate-x-1/2 bg-orange-500 text-white"
+        className="absolute bottom-[50px] left-[50%] transform -translate-x-1/2 bg-orange text-white"
       />
     </section>
   );

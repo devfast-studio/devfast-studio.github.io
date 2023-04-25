@@ -32,7 +32,7 @@ export default function Navbar() {
           <div className="hidden md:flex space-x-4">
             {navItems.map((item) => (
               <Link key={item.name} href={item.href} passHref>
-                <span className="text-gray-600 hover:text-gray-900 cursor-pointer">
+                <span className="hover:text-orange cursor-pointer">
                   {item.name}
                 </span>
               </Link>
@@ -41,7 +41,7 @@ export default function Navbar() {
 
           <Menu as="div" className="md:hidden">
             <Menu.Button
-              className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-600 hover:text-gray-900 focus:outline-none"
+              className="bg-white rounded-md p-2 inline-flex items-center justify-center text-black hover:text-orange focus:outline-none"
               onClick={handleMenuClick}
             >
               <span className="sr-only">Open main menu</span>
@@ -63,10 +63,10 @@ export default function Navbar() {
             <Transition
               show={open}
               as={React.Fragment}
-              enter="transition-opacity ease-in duration-1000"
+              enter="transition-opacity ease-in duration-200"
               enterFrom="opacity-0"
               enterTo="opacity-100"
-              leave="transition-opacity ease-out duration-1000"
+              leave="transition-opacity ease-out duration-100"
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
@@ -81,7 +81,7 @@ export default function Navbar() {
                         <Link href={item.href} passHref>
                           <span
                             className={`${
-                              active ? 'bg-gray text-black' : 'text-gray'
+                              active ? 'text-white bg-orange' : 'text-black'
                             } group flex items-center px-2 py-2 text-sm font-medium rounded-md cursor-pointer`}
                           >
                             {item.name}

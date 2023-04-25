@@ -5,7 +5,7 @@ import { v4 as uuid } from 'uuid';
 
 export default function Footer() {
   return (
-    <footer className="bg-primary py-8">
+    <footer className="py-8">
       <div className="container flex flex-col md:flex-row justify-between items-center">
         <div className="flex space-x-4 text-gray">
           {SOCIAL_LINKS.map((socialLink) => (
