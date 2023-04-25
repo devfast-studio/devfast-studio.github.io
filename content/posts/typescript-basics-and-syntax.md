@@ -26,7 +26,11 @@ Now, you can create a new TypeScript file (e.g., hello.ts) and compile it using 
 $ tsc hello.ts
 ```
 
-This will generate a JavaScript file (hello.js) that can be executed using Node.js or included in an HTML file.
+This will generate a JavaScript file (hello.js) that can be executed using Node.js or included in an HTML file. You can execute the compiled JavaScript codes:
+
+```shell
+$ node hello.js
+```
 
 ## TypeScript Basics
 
@@ -45,15 +49,12 @@ let age: number = 30;
 TypeScript is also capable of inferring the type of a variable based on its initial value. This means that if you don't explicitly declare the type of a variable, TypeScript will automatically assign the most appropriate type based on the value you provide:
 
 ```typescript
-let name = "John Doe"; // TypeScript infers the 'string' type
+let firstName = "John Doe"; // TypeScript infers the 'string' type
 ```
 
 ### &#xA;Functions
 
 TypeScript makes it easy to define functions with typed parameters and return values. Here's an example of a simple TypeScript function:
-
-
-
 
 ```typescript
 function greet(name: string): string {
@@ -63,8 +64,6 @@ function greet(name: string): string {
 console.log(greet("John Doe")); // Output: Hello, John Doe!
 
 ```
-
- 
 
 ### Interfaces
 
@@ -92,7 +91,7 @@ TypeScript introduces classes as a way to create reusable blueprints for creatin
 
 ```typescript
 class Animal {
-  private name: string;
+  protected name: string;
 
   constructor(name: string) {
     this.name = name;
