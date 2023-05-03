@@ -1,6 +1,9 @@
 ---
 title: 1.2. TypeScript compiler and configuration
 date: 2023-05-02T16:00:00.000Z
+tags:
+  - 'Design Patterns, Data Structures, and Algorithms with TypeScript'
+  - TypeScript
 ---
 
 # 1.2. TypeScript compiler and configuration
