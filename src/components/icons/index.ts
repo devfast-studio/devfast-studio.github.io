@@ -1,3 +1,3 @@
-import TigerIcon from './tigerIcon';
+import LogoIcon from './logoIcon';
 
-export { TigerIcon };
+export { LogoIcon };

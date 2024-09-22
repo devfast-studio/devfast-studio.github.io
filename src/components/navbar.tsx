@@ -1,13 +1,14 @@
+'use client';
+
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { Menu, Transition } from '@headlessui/react';
-import { TigerIcon } from 'components/icons';
+import { LogoIcon } from './icons';
 import { v4 as uuid } from 'uuid';
 
 const navItems = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
-  { name: 'Blog', href: '/blog' },
   { name: 'Contact', href: '/contact' }
 ];
 
@@ -19,16 +20,14 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="bg-white shadow">
+    <nav className="bg-white shadow relative z-10">
       <div className="container">
-        <div className="flex items-center justify-between py-4 z-10">
+        <div className="flex items-center justify-between py-4">
           <Link href="/" passHref>
             <span className="flex items-center text-2xl font-semibold cursor-pointer">
-              <TigerIcon />
-              <p className="ml-4">Code Tiger</p>
+              <LogoIcon />
             </span>
           </Link>
-
           <div className="hidden md:flex space-x-4">
             {navItems.map((item) => (
               <Link key={item.name} href={item.href} passHref>
@@ -38,7 +37,6 @@ export default function Navbar() {
               </Link>
             ))}
           </div>
-
           <Menu as="div" className="md:hidden">
             <Menu.Button
               className="bg-white rounded-md p-2 inline-flex items-center justify-center text-black hover:text-orange focus:outline-none"

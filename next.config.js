@@ -6,20 +6,11 @@
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    loader: 'akamai',
-    path: '',
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'tailwindui.com',
-        pathname: '/**/*.{png,jpg,jpeg,webp,svg,gif,ico}'
-      }
-    ]
-  },
-  reactStrictMode: true,
   output: 'export',
-  distDir: 'build'
+  distDir: 'build',
+  images: {
+    unoptimized: true,
+  },
 };
 
 module.exports = nextConfig;

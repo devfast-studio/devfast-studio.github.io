@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 100">
+    <text x="10" y="65" font-family="Arial, sans-serif" font-size="40" font-weight="bold"
+        fill="#4A5568">Dev</text>
+    <text x="85" y="65" font-family="Arial, sans-serif" font-size="40" font-weight="bold"
+        fill="#ff6600">Fast</text>
+    <path d="M190 35 L205 50 L190 65 L190 35 M175 35 L190 50 L175 65 L175 35" fill="#ff6600" />
+</svg>
