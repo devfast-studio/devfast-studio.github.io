@@ -22,10 +22,7 @@ export const metadata: Metadata = {
       }
     ]
   },
-  manifest: '/site.webmanifest',
-  msapplication: {
-    tileColor: '#da532c'
-  }
+  manifest: '/site.webmanifest'
 };
 
 export default function RootLayout({
