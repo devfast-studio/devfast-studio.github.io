@@ -37,6 +37,12 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the content by accessing the TinaCMS admin panel at [http://localhost:3000/admin](http://localhost:3000/admin).
 
+## Deployment
+
+1. Setup tina cloud account
+2. Setup Github Actions to deploy to github page
+3. Add env variables to github repo
+
 ## Project Structure
 
 - `src/pages`: Contains the main pages of the application
