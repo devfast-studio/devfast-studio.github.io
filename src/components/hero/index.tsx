@@ -18,12 +18,12 @@ export default function Hero() {
           ]}
           timeout={5000}
         />
+        <LearnMoreButton
+          href="/about"
+          label="Learn more"
+          className="mt-10 bg-orange-400 text-white"
+        />
       </div>
-      <LearnMoreButton
-        href="/about"
-        label="Learn more"
-        className="absolute bottom-[50px] left-[50%] transform -translate-x-1/2 bg-orange text-white"
-      />
     </section>
   );
 }

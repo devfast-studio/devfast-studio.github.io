@@ -11,7 +11,7 @@ export default function LearnMoreButton(props: {
     <Link
       href={href}
       className={[
-        'transition:transform rounded-md px-4 py-2 hover:scale-105',
+        'transition:transform rounded-md px-4 py-[5px] hover:scale-105',
         className
       ].join(' ')}
     >
