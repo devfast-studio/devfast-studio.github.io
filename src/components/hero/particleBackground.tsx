@@ -19,7 +19,7 @@ export default function ParticleBackground() {
         fullScreen: false,
         background: {
           color: {
-            value: '#ffffff'
+            value: '#1A202C'
           }
         },
         fpsLimit: 120,
@@ -47,10 +47,10 @@ export default function ParticleBackground() {
         },
         particles: {
           color: {
-            value: '#cccccc'
+            value: '#4A5568'
           },
           links: {
-            color: '#cccccc',
+            color: '#4A5568',
             distance: 150,
             enable: true,
             opacity: 0.5,

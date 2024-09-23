@@ -11,7 +11,7 @@ export default function LogoIcon(props: SVGProps<SVGSVGElement>) {
         fontFamily="Arial, sans-serif"
         fontSize="40"
         fontWeight="bold"
-        fill="#4A5568"
+        fill="#EDF2F7"
       >
         Dev
       </text>

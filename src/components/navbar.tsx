@@ -20,9 +20,13 @@ export default function Navbar() {
     setOpen(!open);
   }
 
+  function handleLinkClick() {
+    setOpen(false);
+  }
+
   return (
     <nav>
-      <Layout className="bg-white shadow relative z-10 py-1">
+      <Layout className="bg-gray-100 shadow relative z-10 py-1">
         <div className="flex items-center justify-between py-1">
           <Link href="/" passHref>
             <span className="flex items-center text-2xl font-semibold cursor-pointer ml-[-10px]">
@@ -40,7 +44,7 @@ export default function Navbar() {
           </div>
           <Menu as="div" className="md:hidden">
             <Menu.Button
-              className="bg-white rounded-md p-2 inline-flex items-center justify-center text-black hover:text-orange focus:outline-none"
+              className="bg-gray-100 rounded-md p-2 inline-flex items-center justify-center text-gray-500 hover:text-orange focus:outline-none"
               onClick={handleMenuClick}
             >
               <span className="sr-only">Open main menu</span>
@@ -70,18 +74,22 @@ export default function Navbar() {
               leaveTo="opacity-0"
             >
               <Menu.Items
-                className="absolute w-full right-0 mt-2 z-10 bg-white rounded-md shadow-lg ring-1 ring-[#222222] ring-opacity-5 focus:outline-none"
+                className="absolute w-full right-0 mt-2 z-10 bg-gray-100 rounded-md shadow-lg ring-1 ring-gray-200 ring-opacity-5 focus:outline-none"
                 static
               >
-                <div className="px-1 py-1">
+                <div className="px-4 py-2">
                   {navItems.map((item) => (
                     <Menu.Item key={uuid()}>
-                      {({ active }) => (
-                        <Link href={item.href} passHref>
+                      {() => (
+                        <Link
+                          href={item.href}
+                          onClick={handleLinkClick}
+                          passHref
+                        >
                           <span
-                            className={`${
-                              active ? 'text-white bg-orange' : 'text-black'
-                            } group flex items-center px-2 py-2 text-sm font-medium rounded-md cursor-pointer`}
+                            className={
+                              'flex items-center px-2 py-2 text-sm font-medium rounded-md cursor-pointer text-gray-900'
+                            }
                           >
                             {item.name}
                           </span>
