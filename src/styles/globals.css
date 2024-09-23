@@ -21,6 +21,10 @@ a {
 
 @layer components {
   .container {
-    @apply px-5 md:px-20 max-w-[1440px] mx-auto;
+    @apply px-5 py-5 md:px-20;
+  }
+
+  .layout {
+    @apply max-w-[1440px] mx-auto;
   }
 }

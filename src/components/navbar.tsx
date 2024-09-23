@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Menu, Transition } from '@headlessui/react';
 import { LogoIcon } from './icons';
 import { v4 as uuid } from 'uuid';
+import Layout from './layout';
 
 const navItems = [
   { name: 'Home', href: '/' },
@@ -20,11 +21,11 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="bg-white shadow relative z-10">
-      <div className="container">
-        <div className="flex items-center justify-between py-4">
+    <nav>
+      <Layout className="bg-white shadow relative z-10 py-1">
+        <div className="flex items-center justify-between py-1">
           <Link href="/" passHref>
-            <span className="flex items-center text-2xl font-semibold cursor-pointer">
+            <span className="flex items-center text-2xl font-semibold cursor-pointer ml-[-10px]">
               <LogoIcon />
             </span>
           </Link>
@@ -93,7 +94,7 @@ export default function Navbar() {
             </Transition>
           </Menu>
         </div>
-      </div>
+      </Layout>
     </nav>
   );
 }

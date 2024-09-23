@@ -1,9 +1,9 @@
+import { Metadata } from 'next';
 import Footer from 'components/footer';
 import Navbar from 'components/navbar';
+import Layout from 'components/layout';
 import 'styles/globals.css';
 import 'animate.css';
-
-import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: '99LL Limited',
@@ -34,7 +34,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Navbar />
-        <main className="container">{children}</main>
+        <main>
+          <Layout>{children}</Layout>
+        </main>
         <Footer />
       </body>
     </html>
