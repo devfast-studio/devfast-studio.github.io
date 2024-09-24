@@ -12,7 +12,6 @@
     "ts:watch": "tsc --noEmit --watch"
   },
   "dependencies": {
-    "@headlessui/react": "^1.7.17",
     "animate.css": "^4.1.1",
     "autoprefixer": "^10.4.16",
     "next": "^14.0.4",
