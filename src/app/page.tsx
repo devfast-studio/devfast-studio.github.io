@@ -1,3 +1,4 @@
+import Gallery from 'components/gallery';
 import Hero from 'components/hero';
 
 export const metadata = {
@@ -9,6 +10,7 @@ export default function Home() {
   return (
     <div id="home">
       <Hero />
+      <Gallery />
     </div>
   );
 }
