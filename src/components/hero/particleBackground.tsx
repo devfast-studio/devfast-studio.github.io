@@ -19,7 +19,7 @@ export default function ParticleBackground() {
         fullScreen: false,
         background: {
           color: {
-            value: '#1A202C'
+            value: 'transparent'
           }
         },
         fpsLimit: 120,

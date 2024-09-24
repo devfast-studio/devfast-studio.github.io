@@ -23,8 +23,8 @@ export default function Navbar() {
   }
 
   return (
-    <nav>
-      <Layout className="bg-gray-100 shadow relative z-10 py-1">
+    <nav className="bg-secondary">
+      <Layout className=" text-primary shadow relative z-10 py-1">
         <div className="flex items-center justify-between py-1">
           <Link href="/" passHref>
             <span className="flex items-center text-2xl font-semibold cursor-pointer ml-[-10px]">
@@ -34,14 +34,19 @@ export default function Navbar() {
           <div className="hidden md:flex space-x-4">
             {navItems.map((item) => (
               <Link key={item.name} href={item.href} passHref>
-                <span className="hover:text-orange cursor-pointer">
+                <span className="hover-orange cursor-pointer">
                   {item.name}
                 </span>
               </Link>
             ))}
           </div>
           <button
-            className="md:hidden p-2 rounded-md text-gray-500 hover:text-orange focus:outline-none"
+            className={[
+              'md:hidden p-2 rounded-md focus:outline-none',
+              'hover-orange'
+            ]
+              .join(' ')
+              .trim()}
             onClick={toggleMenu}
           >
             <span className="sr-only">Open main menu</span>
@@ -82,7 +87,7 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="block px-2 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange hover:bg-gray-200"
+                className="block px-1 py-2 rounded-md text-base font-medium hover-orange"
                 onClick={handleLinkClick}
               >
                 {item.name}

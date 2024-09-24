@@ -6,9 +6,10 @@ export default function Footer() {
     <footer>
       <Layout className="mt-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="text-sm text-gray-500">
-            &copy; {new Date().getFullYear()} <strong>99LL Limited</strong> All
-            rights reserved.
+          <div className="text-sm text-muted">
+            &copy; {new Date().getFullYear()}{' '}
+            <span className="text-gray-300">99LL Limited</span> All rights
+            reserved.
           </div>
         </div>
       </Layout>

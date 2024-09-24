@@ -3,7 +3,10 @@ import { EMAIL } from 'constants/config';
 
 export default function Contact() {
   return (
-    <div id="contact" className="flex flex-col gap-12 md:items-center">
+    <div
+      id="contact"
+      className="flex flex-col gap-12 md:items-center text-primary"
+    >
       <div id="contact-form" className="w-full md:w-4/5 lg:w-3/5">
         <h2 className="text-3xl font-semibold mb-8">Send a message</h2>
         <form
@@ -13,18 +16,13 @@ export default function Contact() {
         >
           <div>
             <label
-              className="block text-sm font-medium text-gray-900 mb-2"
+              className="block text-sm font-medium text-secondary mb-2"
               htmlFor="email"
             >
               Email
             </label>
             <input
-              className={[
-                'w-full p-3 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-gray-500 focus:border-gray-500 shadow-sm',
-                'bg-gray-100'
-              ]
-                .join(' ')
-                .trim()}
+              className="w-full p-3 border-2 border-primary rounded-md bg-secondary focus:outline-none focus:ring-orange-500 focus:border-orange-500 shadow-sm"
               name="email"
               type="email"
               required
@@ -32,16 +30,15 @@ export default function Contact() {
           </div>
           <div>
             <label
-              className="block text-sm font-medium text-gray-900 mb-2"
+              className="block text-sm font-medium text-secondary mb-2"
               htmlFor="message"
             >
               Message
             </label>
             <textarea
               className={[
-                'w-full p-3 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-gray-500 focus:border-gray-500 shadow-sm',
-                'bg-gray-100',
-                'h-[30vh]'
+                'shadow-sm h-[30vh] w-full p-3 bg-secondary border-2 border-primary rounded-md',
+                'focus:outline-none focus:ring-orange-500 focus:border-orange-500'
               ]
                 .join(' ')
                 .trim()}
@@ -50,10 +47,7 @@ export default function Contact() {
             />
           </div>
           <div>
-            <button
-              className="w-full px-6 py-3 bg-gray-100 text-white rounded-md hover:bg-orange-600 transition duration-300 ease-in-out"
-              type="submit"
-            >
+            <button className="w-full btn btn-accent" type="submit">
               Send Message
             </button>
           </div>
@@ -61,10 +55,13 @@ export default function Contact() {
       </div>
       <div id="contact-info" className="w-full md:w-4/5 lg:w-3/5">
         <h2 className="text-3xl font-semibold mb-8">Contact info</h2>
-        <p className="text-lg mb-4">Wall Lee</p>
-        <p className="text-lg mb-4">
+        <p className="text-lg mb-4 text-secondary">Wall Lee</p>
+        <p className="text-lg mb-4 text-secondary">
           Email :{' '}
-          <a href={`mailto:${EMAIL}`} className="text-gray-900 hover:underline">
+          <a
+            href={`mailto:${EMAIL}`}
+            className="text-tertiary hover-orange hover:underline"
+          >
             {EMAIL}
           </a>
         </p>

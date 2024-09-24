@@ -63,7 +63,9 @@ export default function AnimatedText(props: {
                 onAnimationEnd={handleAnimationend}
               >
                 {phrase.split('\n').map((line) => (
-                  <p key={uuid()}>{line}</p>
+                  <p key={uuid()} className="mb-2">
+                    {line}
+                  </p>
                 ))}
               </div>
             );
@@ -78,7 +80,11 @@ export default function AnimatedText(props: {
       style={{
         animationDelay: '2s'
       }}
-      className={['animate__animated animate__fadeOut', className].join(' ')}
+      className={[
+        'animate__animated animate__fadeOut',
+        'font-playfair text-primary',
+        className
+      ].join(' ')}
       onAnimationEnd={handlePlaceHolderAnimationend}
     >
       {phrases[0].split('\n').map((line) => (

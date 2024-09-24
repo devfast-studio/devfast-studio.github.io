@@ -2,8 +2,20 @@ import { Metadata } from 'next';
 import Footer from 'components/footer';
 import Navbar from 'components/navbar';
 import Layout from 'components/layout';
+import { Roboto, Playfair_Display } from 'next/font/google';
 import 'styles/globals.css';
 import 'animate.css';
+
+const roboto = Roboto({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ['100', '300', '400', '500', '700', '900']
+});
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  display: 'swap'
+});
 
 export const metadata: Metadata = {
   title: '99LL Limited',
@@ -31,7 +43,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
+    <html
+      lang="en"
+      className={`${roboto.className} ${playfair.className} bg-primary text-primary`}
+    >
       <body>
         <Navbar />
         <main>
