@@ -2,9 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Menu, Transition } from '@headlessui/react';
 import { LogoIcon } from './icons';
-import { v4 as uuid } from 'uuid';
 import Layout from './layout';
 
 const navItems = [
@@ -14,14 +12,14 @@ const navItems = [
 ];
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpend] = useState(false);
 
-  function handleMenuClick() {
-    setOpen(!open);
+  function toggleMenu() {
+    setIsOpend(!isOpen);
   }
 
   function handleLinkClick() {
-    setOpen(false);
+    setIsOpend(false);
   }
 
   return (
@@ -42,65 +40,55 @@ export default function Navbar() {
               </Link>
             ))}
           </div>
-          <Menu as="div" className="md:hidden">
-            <Menu.Button
-              className="bg-gray-100 rounded-md p-2 inline-flex items-center justify-center text-gray-500 hover:text-orange focus:outline-none"
-              onClick={handleMenuClick}
+          <button
+            className="md:hidden p-2 rounded-md text-gray-500 hover:text-orange focus:outline-none"
+            onClick={toggleMenu}
+          >
+            <span className="sr-only">Open main menu</span>
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              <span className="sr-only">Open main menu</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
+              {isOpen ? (
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  strokeWidth="2"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
                   d="M4 6h16M4 12h16M4 18h16"
                 />
-              </svg>
-            </Menu.Button>
-            <Transition
-              show={open}
-              as={React.Fragment}
-              enter="transition-opacity ease-in duration-200"
-              enterFrom="opacity-0"
-              enterTo="opacity-100"
-              leave="transition-opacity ease-out duration-100"
-              leaveFrom="opacity-100"
-              leaveTo="opacity-0"
-            >
-              <Menu.Items
-                className="absolute w-full right-0 mt-2 z-10 bg-gray-100 rounded-md shadow-lg ring-1 ring-gray-200 ring-opacity-5 focus:outline-none"
-                static
+              )}
+            </svg>
+          </button>
+        </div>
+        <div
+          className={[
+            'md:hidden overflow-hidden transition-all duration-300 ease-in-out',
+            isOpen ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'
+          ]
+            .join(' ')
+            .trim()}
+        >
+          <div className="pt-2 pb-3 space-y-1">
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="block px-2 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange hover:bg-gray-200"
+                onClick={handleLinkClick}
               >
-                <div className="px-4 py-2">
-                  {navItems.map((item) => (
-                    <Menu.Item key={uuid()}>
-                      {() => (
-                        <Link
-                          href={item.href}
-                          onClick={handleLinkClick}
-                          passHref
-                        >
-                          <span
-                            className={
-                              'flex items-center px-2 py-2 text-sm font-medium rounded-md cursor-pointer text-gray-900'
-                            }
-                          >
-                            {item.name}
-                          </span>
-                        </Link>
-                      )}
-                    </Menu.Item>
-                  ))}
-                </div>
-              </Menu.Items>
-            </Transition>
-          </Menu>
+                {item.name}
+              </Link>
+            ))}
+          </div>
         </div>
       </Layout>
     </nav>
