@@ -1,6 +1,11 @@
 import React from 'react';
 import { EMAIL } from 'constants/config';
 
+export const metadata = {
+  title: 'Contact | 99LL Limited',
+  description: '99LL Limited Contact Page'
+};
+
 export default function Contact() {
   return (
     <div

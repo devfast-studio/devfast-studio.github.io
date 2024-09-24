@@ -2,6 +2,11 @@
 import React from 'react';
 import Link from 'next/link';
 
+export const metadata = {
+  title: 'About | 99LL Limited',
+  description: '99LL Limited About Page'
+};
+
 export default function About() {
   return (
     <div className="bg-gray-900 text-gray-100">
