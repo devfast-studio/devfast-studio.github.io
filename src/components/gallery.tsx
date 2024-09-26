@@ -22,7 +22,7 @@ const DEMO_DATA = [
 
 export default function Gallery() {
   return (
-    <div id="gallery">
+    <section className="gallery">
       <h2 className="text-2xl text-left font-bold mb-[30px]">Showcase</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
         {DEMO_DATA.map((demo) => (
@@ -41,6 +41,6 @@ export default function Gallery() {
           </Link>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

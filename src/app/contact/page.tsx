@@ -12,7 +12,7 @@ export default function Contact() {
       id="contact"
       className="flex flex-col gap-12 md:items-center text-primary"
     >
-      <div id="contact-form" className="w-full md:w-4/5 lg:w-3/5">
+      <section className="contact-form w-full md:w-4/5 lg:w-3/5">
         <h2 className="text-3xl font-semibold mb-8">Send a message</h2>
         <form
           action="https://formspree.io/f/mnnakbor"
@@ -57,8 +57,9 @@ export default function Contact() {
             </button>
           </div>
         </form>
-      </div>
-      <div id="contact-info" className="w-full md:w-4/5 lg:w-3/5">
+      </section>
+
+      <section className="contact-info w-full md:w-4/5 lg:w-3/5">
         <h2 className="text-3xl font-semibold mb-8">Contact info</h2>
         <p className="text-lg mb-4 text-secondary">Wall Lee</p>
         <p className="text-lg mb-4 text-secondary">
@@ -70,7 +71,7 @@ export default function Contact() {
             {EMAIL}
           </a>
         </p>
-      </div>
+      </section>
     </div>
   );
 }

@@ -9,8 +9,8 @@ export const metadata = {
 
 export default function About() {
   return (
-    <div className="bg-gray-900 text-gray-100">
-      <section className="container layout">
+    <div id="about" className="bg-gray-900 text-gray-100">
+      <section className="intro container layout">
         <h1 className="text-4xl font-bold mb-4 font-playfair">Hello World</h1>
         <p className="mb-2">
           I'm Wall Lee, representing DevFast Studio, a versatile development
@@ -28,7 +28,7 @@ export default function About() {
         </p>
       </section>
 
-      <section className="container layout mt-4">
+      <section className="work-experience container layout mt-4">
         <h2 className="text-2xl font-bold mb-2 font-playfair">Work</h2>
         <p>
           At DevFast Studio, we offer services as{' '}
@@ -44,7 +44,7 @@ export default function About() {
         </p>
       </section>
 
-      <section className="container layout mt-4">
+      <section className="expertise container layout mt-4">
         <h2 className="text-2xl font-bold mb-2 font-playfair">Expertise</h2>
         <p className="mb-2">
           I specialize in full-stack web development, mobile app creation, and
@@ -60,7 +60,7 @@ export default function About() {
         </ul>
       </section>
 
-      <section className="container layout mt-4">
+      <section className="projects container layout mt-4">
         <h2 className="text-2xl font-bold mb-2 font-playfair">Projects</h2>
         <p className="mb-2">
           Throughout my career, I've worked on a variety of projects, including:
@@ -79,7 +79,7 @@ export default function About() {
         </p>
       </section>
 
-      <section className="container layout mt-4">
+      <section className="contact container layout mt-4">
         <h2 className="text-2xl font-bold mb-2 font-playfair">Contact</h2>
         <p>
           You can reach DevFast Studio at{' '}
