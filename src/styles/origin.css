@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply bg-gray-900 text-gray-100 font-roboto;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-3 rounded-md transition duration-300 ease-in-out;
+  }
+
+  .btn-accent {
+    @apply bg-orange-500 text-gray-900 hover:bg-orange-400;
+  }
+
+  .btn-dark {
+    @apply bg-gray-700 text-gray-100 hover:bg-gray-600;
+  }
+
+  .btn-light {
+    @apply bg-gray-800 text-gray-300 hover:bg-gray-700;
+  }
+}
+
+@layer utilities {
+  .text-primary {
+    @apply text-gray-100;
+  }
+
+  .text-secondary {
+    @apply text-gray-300;
+  }
+
+  .text-muted {
+    @apply text-gray-400;
+  }
+
+  .bg-primary {
+    @apply bg-gray-900;
+  }
+
+  .bg-secondary {
+    @apply bg-gray-800;
+  }
+
+  .bg-tertiary {
+    @apply bg-gray-700;
+  }
+
+  .border-primary {
+    @apply border-gray-700;
+  }
+
+  .border-secondary {
+    @apply border-gray-600;
+  }
+
+  .hover-orange {
+    @apply hover:text-orange-400;
+  }
+}

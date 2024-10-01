@@ -4,6 +4,7 @@ import Navbar from 'components/navbar';
 import Layout from 'components/layout';
 import { Roboto, Playfair_Display } from 'next/font/google';
 import 'styles/globals.css';
+import 'styles/origin.css';
 import 'animate.css';
 
 const roboto = Roboto({

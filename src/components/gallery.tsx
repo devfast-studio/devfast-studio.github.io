@@ -5,18 +5,13 @@ import Image from 'next/image';
 const DEMO_DATA = [
   {
     title: 'Company Landing Page',
-    href: '/company-landing',
-    imgSrc: 'https://via.placeholder.com/300x200?text=Company+Landing'
+    href: '/demo/company-landing',
+    imgSrc: 'https://placehold.co/600x400?text=Company+Landing'
   },
   {
     title: 'Personal Blog Page',
-    href: '/personal-blog',
-    imgSrc: 'https://via.placeholder.com/300x200?text=Personal+Blog'
-  },
-  {
-    title: 'Shopping Page',
-    href: '/shopping-page',
-    imgSrc: 'https://via.placeholder.com/300x200?text=Shopping+Page'
+    href: '/demo/personal-blog',
+    imgSrc: 'https://placehold.co/600x400?text=Personal+Blog'
   }
 ];
 

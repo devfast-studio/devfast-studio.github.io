@@ -2,19 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  html,
-  body {
-    @apply p-0 m-0 bg-gray-900 text-gray-100 font-roboto;
-  }
+/* Reset box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-  a {
-    @apply text-inherit no-underline;
-  }
+/* Reset margins and paddings */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
 
-  * {
-    @apply box-border;
-  }
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+html,
+body {
+  background: white;
+  color: black;
+}
+
+/* Remove list styles on ul, ol elements */
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
 
 @layer components {
@@ -24,59 +66,5 @@
 
   .layout {
     @apply max-w-[1440px] mx-auto;
-  }
-
-  .btn {
-    @apply px-6 py-3 rounded-md transition duration-300 ease-in-out;
-  }
-
-  .btn-accent {
-    @apply bg-orange-500 text-gray-900 hover:bg-orange-400;
-  }
-
-  .btn-dark {
-    @apply bg-gray-700 text-gray-100 hover:bg-gray-600;
-  }
-
-  .btn-light {
-    @apply bg-gray-800 text-gray-300 hover:bg-gray-700;
-  }
-}
-
-@layer utilities {
-  .text-primary {
-    @apply text-gray-100;
-  }
-
-  .text-secondary {
-    @apply text-gray-300;
-  }
-
-  .text-muted {
-    @apply text-gray-400;
-  }
-
-  .bg-primary {
-    @apply bg-gray-900;
-  }
-
-  .bg-secondary {
-    @apply bg-gray-800;
-  }
-
-  .bg-tertiary {
-    @apply bg-gray-700;
-  }
-
-  .border-primary {
-    @apply border-gray-700;
-  }
-
-  .border-secondary {
-    @apply border-gray-600;
-  }
-
-  .hover-orange {
-    @apply hover:text-orange-400
   }
 }
