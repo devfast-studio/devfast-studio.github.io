@@ -1,5 +1,6 @@
 import Layout from 'components/layout';
 import 'styles/globals.css';
+import { Header } from './components/header';
 
 export default function DemoCompanyLandingLayout({
   children
@@ -19,69 +20,10 @@ export default function DemoCompanyLandingLayout({
   );
 }
 
-function Header() {
-  return (
-    <header className="flex justify-between items-center p-4 md:p-6">
-      <div className="text-2xl font-bold text-navy-900">FitGym</div>
-      <nav className="hidden md:flex space-x-6">
-        <a href="#" className="text-navy-900 hover:text-blue-600">
-          Home
-        </a>
-        <a href="#" className="text-navy-900 hover:text-blue-600">
-          About Us
-        </a>
-        <a href="#" className="text-navy-900 hover:text-blue-600">
-          Classes
-        </a>
-        <a href="#" className="text-navy-900 hover:text-blue-600">
-          Contact
-        </a>
-      </nav>
-      <div className="flex items-center space-x-4">
-        <div className="relative hidden md:block">
-          <input
-            type="text"
-            placeholder="Search"
-            className="pl-3 pr-10 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-blue-300"
-          />
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-            />
-          </svg>
-        </div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="md:hidden h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M4 6h16M4 12h16M4 18h16"
-          />
-        </svg>
-      </div>
-    </header>
-  );
-}
-
 function Footer() {
   return (
-    <footer className="p-4 flex justify-between items-center">
-      <div className="flex space-x-4">
+    <footer className="p-4 flex flex-col md:flex-row justify-between items-center">
+      <div className="flex space-x-4 mb-4 md:mb-0">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-6 w-6 text-blue-600"
@@ -107,7 +49,7 @@ function Footer() {
           <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
         </svg>
       </div>
-      <div className="text-gray-600">
+      <div className="text-gray-600 text-center md:text-right">
         &copy; 2024 FitGym. All rights reserved.
       </div>
     </footer>
